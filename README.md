@@ -3,6 +3,8 @@
 
 [Lab TryHackMe](./Lab-Tryhackme-Cyber-Security-101)
 
+[Module 1](./Module-1-Start-Your-Cyber-Security-Journey)
+
 
 
 
