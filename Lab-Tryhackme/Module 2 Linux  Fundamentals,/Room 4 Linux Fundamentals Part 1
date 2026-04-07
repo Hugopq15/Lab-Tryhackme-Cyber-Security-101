@@ -1,1 +1,67 @@
+Room 4 Linux Fundamentals Part 1
+
+## Tasks 1 to 3 – Introduction and Environment
+Identified Linux as an open-source system powering critical global infrastructure.
+
+Learned how to deploy and manage virtual machines on TryHackMe (Start/Terminate machine).
+
+Recognized Ubuntu as the primary distribution used for this learning path.
+
+---
+
+## Task 4 – Fundamental Commands
+echo: Used to output text or variables to the screen.
+
+whoami: Used to identify the currently logged-in user.
+
+## Task 5 – Interacting with the Filesystem
+ls: Listed files and directories within the current location.
+
+cd: Changed directories to navigate through the system hierarchy.
+
+cat: Viewed file contents (concatenate).
+
+pwd: Identified the current absolute path (Print Working Directory).
+
+---
+
+## Task 6 – Searching for Files
+find: Located files by exact name or extension using wildcards (*).
+
+grep: Filtered text within files to find specific patterns (e.g., passwords or flags).
+
+---
+
+## Task 7 – Shell Operators
+&: Executed commands in the background.
+
+&&: Chained commands together, where the second runs only if the first succeeds.
+
+>: Redirected output to overwrite a file's content.
+
+>>: Redirected output to append information to the end of a file.
+
+---
+
+## Task 8 – Conclusion
+Recapped the efficiency of the terminal over a Graphical User Interface (GUI) and prepared for advanced system administration concepts.
+
+---
+
+## Tools
+
+- TryHackMe AttackBox: An interactive, browser-based Linux machine.
+- Linux Shell (Terminal): Command-line interface used to interact with the system.
+
+## Findings
+- Versatility: Linux is the backbone of most enterprise servers and smart devices.
+- Search Efficiency: Tools like grep and find allow for auditing massive systems in seconds—a task impossible to perform manually.
+- Data Manipulation: The > and >> operators enable the dynamic creation of audit logs and configuration files.
+- Critical Structure: The pwd command reveals that the Linux directory structure is predictable but requires precision regarding file paths.
+
+## Mitigation / Best Practices
+- Session Control: Always terminate machines after practice to optimize resource usage.
+- Data Loss Prevention: Prefer using >> over > to avoid accidental deletion of important configuration files.
+- Operator Safety: When using &&, ensure the first command is safe to prevent chain errors from affecting system integrity.
+- Terminal Hygiene: Document complex grep commands or use the history command for future incident response investigations.
 
