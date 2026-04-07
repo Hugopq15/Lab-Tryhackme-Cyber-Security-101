@@ -57,8 +57,6 @@ Objective: Practice immediate response by blocking malicious traffic.
 - The attacker attempted URL discovery, indicating reconnaissance.
 - Defensive actions successfully contained the threat by blocking the IP.
 
----
-
 ## Mitigation
 - Strengthen firewall rules and intrusion detection systems.
 - Implement automated blocking for repeated suspicious attempts.
