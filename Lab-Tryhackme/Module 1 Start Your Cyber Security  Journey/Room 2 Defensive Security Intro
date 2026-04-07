@@ -45,6 +45,14 @@ Objective: Practice immediate response by blocking malicious traffic.
 
 ---
 
+## Tools Used
+
+TryHackMe platform – the lab environment hosting the simulation.
+Virtual machine / monitoring dashboard – the simulated SOC dashboard where alerts and logs are displayed.
+Firewall interface – used to add rules and block malicious IP addresses.
+Log viewer – for checking authentication attempts and URL discovery logs.
+Web browser – to access the lab environment and interact with the dashboard.
+
 ## Findings
 
 Suspicious activity was detected from IP 32.122.195.63.
