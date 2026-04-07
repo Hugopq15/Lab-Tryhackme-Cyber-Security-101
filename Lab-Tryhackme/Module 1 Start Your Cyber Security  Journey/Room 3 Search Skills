@@ -70,6 +70,23 @@ Staying connected to communities ensures awareness of emerging tools and trends.
 
 ---
 
+## Tools Used
+- TryHackMe platform – hosting the lab environment.
+- Web browser – to perform searches and access resources.
+- Google / Bing / DuckDuckGo – general search engines.
+- Shodan – search engine for Internet‑connected devices.
+- Censys – search engine for Internet assets and certificates.
+- VirusTotal – multi‑engine malware scanning service.
+- Have I Been Pwned (HIBP) – breach database for checking compromised emails.
+- CVE Program / NVD – vulnerability databases.
+- Exploit Database – repository of exploit code.
+- GitHub – proof‑of‑concept and exploit repositories.
+- Linux man pages – command documentation.
+- Microsoft Technical Documentation – official Windows references.
+- Product Documentation – Snort, Apache, PHP, Node.js, etc.
+- Social media platforms – Facebook, Twitter, LinkedIn.
+- Cybersecurity news outlets – industry updates.
+
 ## Findings
 - General search engines return millions of results, requiring critical evaluation skills.
 - Many online sources lack credibility or evidence, highlighting the need for source validation.
