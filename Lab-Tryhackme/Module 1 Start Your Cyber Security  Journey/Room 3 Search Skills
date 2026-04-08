@@ -1,72 +1,65 @@
 Room 3 Search skills 
 
 ##Task 1 – Introduction
-Compared search results for “learn cyber security” vs “learn hacking”.
 
-Reflected on information overload and the need for search skills.
+- Compared search results for “learn cyber security” vs “learn hacking”.
+- Reflected on information overload and the need for search skills.
 
 ---
 
 ##Task 2 – Evaluation of Search Results
-Checked author credibility and reputation.
 
-Verified evidence and reasoning.
-
-Assessed objectivity and bias.
-
-Corroborated claims with multiple sources.
+- Checked author credibility and reputation.
+- Verified evidence and reasoning.
+- Assessed objectivity and bias.
+- Corroborated claims with multiple sources.
 
 ---
 
 ## Task 3 – Search Engines
-Practiced Google operators: "exact phrase", site:, -, filetype:.
 
-Learned to refine searches for technical content.
+- Practiced Google operators: "exact phrase", site:, -, filetype:.
+- Learned to refine searches for technical content.
 
 ---
 
 ## Task 4 – Specialized Search Engines
-Explored Shodan for Internet‑connected devices.
 
-Used Censys for hosts, domains, and certificates.
-
-Tested VirusTotal for malware detection.
-
-Checked Have I Been Pwned for breached emails.
+- Explored Shodan for Internet‑connected devices.
+- Used Censys for hosts, domains, and certificates.
+- Tested VirusTotal for malware detection.
+- Checked Have I Been Pwned for breached emails.
 
 ---
 
 ## Task 5 – Vulnerabilities and Exploits
-Reviewed CVE IDs in MITRE and NVD.
 
-Searched Exploit Database for Heartbleed exploit code.
-
-Found PoCs on GitHub related to CVE‑2014‑0160.
+- Reviewed CVE IDs in MITRE and NVD.
+- Searched Exploit Database for Heartbleed exploit code.
+- Found PoCs on GitHub related to CVE‑2014‑0160.
 
 ---
 
 ## Task 6 – Technical Documentation
-Used Linux man ip to read command documentation.
 
-Checked Microsoft Technical Documentation for ipconfig.
-
-Explored Snort, Apache, PHP, and Node.js official documentation.
+- Used Linux man ip to read command documentation.
+- Checked Microsoft Technical Documentation for ipconfig.
+- Explored Snort, Apache, PHP, and Node.js official documentation.
 
 ---
 
 ## Task 7 – Social Media
-Explored social media platforms using temporary accounts.
 
-Identified oversharing risks (e.g., personal details that could answer security questions).
-
-Followed cybersecurity groups and channels for updates.
+- Explored social media platforms using temporary accounts.
+- Identified oversharing risks (e.g., personal details that could answer security questions).
+- Followed cybersecurity groups and channels for updates.
 
 ---
 
 ## Task 8 – Conclusion
-Recognized that the information landscape is constantly evolving.
 
-Staying connected to communities ensures awareness of emerging tools and trends.
+- Recognized that the information landscape is constantly evolving.
+- Staying connected to communities ensures awareness of emerging tools and trends.
 
 ---
 
