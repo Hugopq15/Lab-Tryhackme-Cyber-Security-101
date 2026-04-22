@@ -1,1 +1,159 @@
 # Room 7 Windows Fundamentals Part 1
+
+##Task 1 Windows Editions
+
+Windows has evolved since 1985, becoming the dominant OS for home and corporate use.
+Key Versions:
+Windows XP: widely used, long support cycle.
+Windows Vista: major overhaul, poorly received.
+Windows 7: stable, widely adopted after XP’s end-of-life.
+Windows 8.x: short-lived, similar fate to Vista.
+Windows 10: mainstream OS, retirement set for October 14, 2025.
+Windows 11: current desktop OS (Home & Pro editions).
+Server Editions: current version is Windows Server 2025.
+VM Edition Used in Lab: Windows Server 2019 Standard.
+
+---
+
+Task 2 The Desktop (GUI)
+
+Login Screen: requires valid credentials (local account or Active Directory).
+Desktop Components:
+Desktop: shortcuts to files, folders, programs. Customizable via right-click (arrangement, resolution, wallpaper, themes).
+Start Menu: access to apps, files, utilities.
+Left section: account actions, settings, power options.
+Middle section: recently added and installed apps (alphabetical list).
+Right section: tiles for pinned apps/programs.
+Taskbar: shows running apps/programs, supports pinning, previews, and toolbars.
+Notification Area: bottom-right corner with date/time, volume, network icons. Configurable via Taskbar settings.
+
+---
+
+Task 3 Introduction to Windows
+
+Windows OS is a complex product with system files, utilities, and features.
+Lab Setup:
+Launch VM via browser or Remote Desktop.
+Credentials:
+Machine IP: MACHINE_IP
+Accept certificate to log in.
+VM may take up to 3 minutes to load.
+
+---
+
+Task 4 The File System
+
+Modern File System: NTFS (New Technology File System).
+Previous Systems: FAT16/FAT32, HPFS. FAT still used in USB/MicroSD devices.
+NTFS Features:
+Journaling for automatic repair.
+Supports files larger than 4GB.
+File/folder permissions (Full control, Modify, Read & Execute, List, Read, Write).
+Compression and encryption (EFS).
+Viewing Permissions: Right-click → Properties → Security tab.
+Alternate Data Streams (ADS): hidden streams in NTFS files, used for metadata or sometimes exploited by malware.
+
+---
+
+Task 5 The Windows\System32 Folder
+
+Windows Folder: typically C:\Windows, but can reside elsewhere.
+Environment Variable: %windir% points to Windows directory.
+System32 Folder: contains critical OS files.
+Deleting/modifying files here can break the OS.
+Many Windows tools reside in System32.
+
+---
+
+Task 6 User Accounts, Profiles, and Permissions
+
+Account Types:
+Administrator: full system control.
+Standard User: limited to personal files/folders.
+Profiles: stored in C:\Users\<username>. Created upon first login.
+Local User and Group Management: lusrmgr.msc.
+Groups define permissions.
+Users inherit permissions from groups.
+Profile Folders: Desktop, Documents, Downloads, Music, Pictures.
+
+---
+
+Task 7 User Account Control (UAC)
+
+Introduced in Windows Vista, continued in later versions.
+Purpose: reduce risk of malware by requiring confirmation for elevated tasks.
+How It Works:
+Admin accounts run without elevated privileges by default.
+When elevated action is required, UAC prompts for confirmation.
+Shield icon indicates UAC protection.
+Security Benefit: prevents unauthorized installations or system changes without user approval.
+
+---
+
+Task 8 Settings and the Control Panel
+
+Settings Menu: modern interface introduced in Windows 8, primary in Windows 10/11.
+Control Panel: legacy hub for advanced configurations.
+Integration: some actions start in Settings but redirect to Control Panel (e.g., network adapter options).
+Installed Applications: Control Panel → Programs → Programs and Features.
+Tip: Use Start Menu search to locate settings quickly.
+
+---
+
+Task 9 Task Manager
+
+Purpose: monitor applications and processes.
+Access: right-click taskbar → Task Manager.
+Views:
+Simple View: minimal info.
+More Details: expanded tabs (Processes, Performance, App history, Startup, Users, Details, Services).
+Key Features:
+Monitor CPU, RAM, disk, and network usage.
+Identify resource-heavy applications.
+Manage startup programs.
+End tasks or processes directly.
+
+---
+
+Tools Used
+Access & Deployment: Remote Desktop, VM login credentials.
+GUI Navigation: Start Menu, Taskbar, Notification Area, Personalization settings.
+File System Management: NTFS permissions, Properties → Security tab, ADS (via PowerShell/third-party tools).
+Critical Folders: Windows directory (%windir%), System32.
+User Management: lusrmgr.msc, Local Users and Groups, account type settings.
+Security Features: UAC prompts, shield icons, administrator vs standard user contexts.
+System Configuration: Settings menu, Control Panel, Programs and Features.
+Monitoring Tools: Task Manager (Processes, Performance, Startup, Services).
+
+Conclusion
+
+- This Windows Fundamentals module provided a generic overview of Windows OS, covering:
+- Windows editions and evolution.
+- GUI components and customization.
+- File system (NTFS, permissions, ADS).
+- Critical folders (Windows, System32).
+- User accounts, profiles, and permissions.
+- Security features like UAC.
+- Settings vs Control Panel.
+- Task Manager for monitoring and managing processes.
+- Next Steps: Future modules will explore intermediate and advanced topics such as:
+- Windows folder structure.
+
+---
+
+Management console.
+- Security tools (Windows Defender, Windows Firewall).
+
+Findings
+- Windows provides both modern (Settings) and legacy (Control Panel) interfaces for system management.
+- Task Manager is essential for monitoring performance and troubleshooting.
+- NTFS enhances security and reliability compared to older file systems.
+- UAC reduces malware risks by requiring elevation prompts.
+- System32 and user account management are critical for OS stability and security.
+
+Mitigation / Practical Application
+- Use Settings for common tasks, but rely on Control Panel for advanced configurations.
+- Regularly check Task Manager to identify resource-heavy or suspicious processes.
+- Apply NTFS permissions carefully to enforce least privilege.
+- Keep UAC enabled to prevent unauthorized system changes.
+- Avoid tampering with System32 to maintain OS integrity.
