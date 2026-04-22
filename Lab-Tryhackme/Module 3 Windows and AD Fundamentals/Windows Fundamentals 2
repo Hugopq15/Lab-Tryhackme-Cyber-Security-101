@@ -1,1 +1,141 @@
 # Room 8 Windows Fundamentals Part 2
+
+Task 1 Introduction
+
+- Continuation of Windows Fundamentals 1, focusing on deeper system utilities and advanced configuration.
+- Explores tools like System Configuration (MSConfig), Advanced System Settings, Computer Management, System Information, Resource Monitor, Command Prompt, and Registry Editor.
+- Lab Setup:
+- Launch VM via browser or Remote Desktop.
+- Credentials:
+- Machine IP: MACHINE_IP
+- Accept certificate to log in.
+
+---
+
+Task 2 System Configuration and Advanced System Settings
+
+- System Configuration (MSConfig)
+- Purpose: advanced troubleshooting, diagnosing startup issues.
+Tabs:
+- General: Normal, Diagnostic, or Selective startup.
+- Boot: configure OS boot options.
+- Services: lists all background services.
+- Startup: on servers, startup items are managed via shell:startup.
+- Tools: provides access to system utilities with descriptions and launch commands.
+- Advanced System Settings
+- Access via search: View advanced system settings.
+- Performance Options:
+- Page file acts as virtual memory when RAM is full.
+- Settings show drive location, initial size, maximum size, and management options.
+- Startup and Recovery:
+- Configures crash dump files for system errors (BSOD).
+- Dump types: Automatic, Kernel, Small (256 KB), Complete, None.
+
+---
+
+Task 3 Change UAC Settings
+
+- UAC protects against unauthorized system changes.
+- Settings adjustable via slider with four levels:
+- Always notify: highest security, alerts for all changes, dims desktop.
+- Notify for apps: default; alerts only when apps make changes.
+- Notify without dimming: same as above, but desktop doesn’t dim.
+- Never notify: disables UAC prompts (not recommended).
+
+---
+
+Task 4 Computer Management (compmgmt)
+
+System Tools
+- Task Scheduler: automate tasks/scripts.
+- Event Viewer: audit trail of system activity.
+- Shared Folders: view shares, sessions, open files.
+- Local Users and Groups: manage accounts and permissions.
+- Performance Monitor (perfmon): real-time or logged performance data.
+- Device Manager: configure hardware devices.
+- Storage
+- Disk Management: advanced storage tasks (setup new drives, extend/shrink partitions, assign/change drive letters).
+- Services and Applications
+- Services: view and configure background services (Automatic, Manual, Disabled).
+- WMI Control: manage Windows Management Instrumentation (PowerShell replaces WMIC).
+
+---
+
+Task 5 System Information (msinfo32)
+
+- Displays system details for diagnostics.
+- Sections: System Summary, Hardware Resources, Components, Software Environment.
+- Environment Variables store OS data (e.g., %windir%).
+- Search bar allows filtering (e.g., search for IP address).
+
+---
+
+Task 6 Resource Monitor (resmon)
+
+- Displays CPU, memory, disk, and network usage per process.
+- Useful for advanced troubleshooting and identifying deadlocks or file conflicts.
+- Real-time graphical pane shows system activity visually.
+
+---
+
+## Task 7 Command Prompt (cmd)
+
+- Legacy interface for interacting with the OS.
+Basic Commands:
+hostname: outputs computer name.
+- whoami: outputs logged-in user.
+- Troubleshooting Commands:
+- ipconfig: shows network settings.
+- ipconfig /?: displays help manual.
+- cls: clears screen.
+- netstat: shows protocol statistics and TCP/IP connections.
+- net: manages network resources with sub-commands (user, localgroup, use, share, session).
+- net help user: displays help for sub-commands.
+
+---
+
+## Task 8 Registry Editor (regedit)
+
+- Windows Registry: hierarchical database storing system, user, application, and hardware configuration.
+- Contains profiles, installed applications, folder/icon settings, hardware info, and port usage.
+- Warning: modifying registry can disrupt system operations.
+- Access via Registry Editor (regedit).
+
+---
+
+## Tools Used
+
+- Access & Deployment: Remote Desktop, VM login.
+- System Utilities: MSConfig, Task Scheduler, Event Viewer, Shared Folders, Local Users and Groups, Performance Monitor, Device Manager, Disk Management, Services, WMI Control.
+- Information Tools: System Information (msinfo32), Environment Variables.
+- Monitoring Tools: Resource Monitor, Task Manager.
+- Command Line Tools: hostname, whoami, ipconfig, netstat, net commands.
+- Security Features: UAC settings slider.
+- Registry Tools: Registry Editor (regedit).
+
+## Findings
+
+- MSConfig and Advanced System Settings are essential for troubleshooting and performance management.
+- Computer Management consolidates tools for scheduling, monitoring, and managing system resources.
+- System Information provides comprehensive diagnostics.
+- Resource Monitor offers granular real-time performance insights.
+- Command Prompt remains a powerful tool for troubleshooting and system management.
+- Registry Editor is critical but risky; changes must be made cautiously.
+- UAC continues to provide a vital security layer.
+
+## Mitigation / Practical Application
+
+- Use MSConfig for diagnostics, not permanent startup management.
+- Monitor page file size and configure crash dumps for troubleshooting.
+- Regularly review Event Viewer logs for anomalies.
+- Automate tasks with Task Scheduler.
+- Apply least privilege principles with Shared Folders and Local Users/Groups.
+- Monitor performance with perfmon and resmon.
+- Use Command Prompt for quick troubleshooting.
+- Keep UAC enabled to reduce risk of compromise.
+- Avoid unnecessary registry modifications.
+
+## Conclusion
+- Tools covered can be launched from MSConfig or directly via Start Menu/Run dialog.
+- Utilities explored: MSConfig, Advanced System Settings, Computer Management, System Information, Resource Monitor, Command Prompt, Registry Editor.
+- Some tools were covered in Fundamentals 1 or left for further exploration.
