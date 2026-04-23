@@ -1,1 +1,138 @@
 # Room 10 Windows Active Directory Basics
+
+## Task 1: Introduction
+
+Microsoft’s Active Directory (AD) is the backbone of corporate IT environments. It simplifies the management of devices and users by centralizing identity, policies, and access.
+Objectives:
+- Understand what AD is.
+- Learn what an AD Domain is.
+- Explore AD Domain components.
+- Study forests and domain trusts.
+- Prerequisites: General familiarity with Windows.
+
+---
+
+## Task 2: Windows Domains
+
+A Windows Domain is a group of users and computers managed centrally. The Domain Controller (DC) runs Active Directory services.
+Advantages:
+- Centralized identity management.
+- Centralized security policies.
+- Example: In schools/universities, credentials work across all campus computers because authentication is handled by AD. Policies restrict access (e.g., no control panel access).
+- Scenario: At THM Inc., the domain is THM.local. You are the new IT admin tasked with reviewing and configuring it.
+
+---
+
+## Task 3: Active Directory
+
+The Active Directory Domain Service (AD DS) catalogues all “objects” in the network.
+Objects:
+- Users: Security principals representing people or services.
+- Machines: Each computer joining the domain creates a machine account (e.g., DC01$).
+- Security Groups: Collections of users/machines with shared privileges (e.g., Domain Admins, Server Operators, Backup Operators).
+- Active Directory Users and Computers (ADUC):
+- Tool to manage users, groups, and machines.
+- Organizational Units (OUs): Containers to classify users/machines (e.g., IT, Sales, Marketing).
+- Default containers: Builtin, Computers, Domain Controllers, Users, Managed Service Accounts.
+Groups vs OUs:
+- OUs apply policies/configurations (one OU per user).
+- Groups grant permissions (users can belong to multiple groups).
+
+---
+
+## Task 4: Managing Users in AD
+
+Steps:
+- Delete extra OUs (disable accidental deletion protection).
+- Create/delete users to match organizational chart.
+- Delegation: Grant specific privileges (e.g., Phillip resets passwords for Sales OU).
+- Test delegation with PowerShell:
+powershell
+- Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose
+- Set-ADUser -ChangePasswordAtLogon $true -Identity sophie -Verbose
+- Objective: Manage OUs, users, and delegate tasks.
+
+---
+
+## Task 5: Managing Computers in AD
+
+- Machines joining the domain are placed in the Computers container.
+Steps:
+- Identify device types: Workstations, Servers, Domain Controllers.
+- Create OUs: Workstations and Servers under thm.local.
+- Move PCs/laptops → Workstations OU; servers → Servers OU.
+- Objective: Organize computers into OUs for tailored policies.
+
+---
+
+##Task 6: Group Policies
+
+- Group Policy Objects (GPOs): Collections of settings applied to OUs.
+Concepts:
+- Apply to OUs and sub-OUs.
+- Security Filtering restricts scope.
+- Distributed via SYSVOL share.
+- Force update with gpupdate /force.
+THM Inc. GPOs:
+- Restrict Control Panel Access: Apply to Marketing, Management, Sales OUs.
+- Auto Lock Screen: Apply to root domain → Workstations, Servers, Domain Controllers inherit.
+- Objective: Create, edit, and link GPOs to enforce security baselines.
+
+---
+
+## Task 7: Authentication Methods
+
+- Kerberos (default):
+-- Ticket-based authentication (TGT, TGS).
+- Secure and efficient.
+- NetNTLM (legacy):
+- Challenge-response mechanism.
+- Password/hash never transmitted directly.
+- Objective: Understand Kerberos vs NetNTLM authentication.
+
+---
+
+## Task 8: Trees, Forests, and Trusts
+
+- Trees: Multiple domains sharing namespace (e.g., uk.thm.local, us.thm.local).
+- Enterprise Admins group: privileges across all domains.
+- Forests: Union of multiple trees with different namespaces (e.g., THM Inc. + MHT Inc.).
+ Trust Relationships:
+- One-way trust: Domain A trusts Domain B → B’s users can access A’s resources.
+- Two-way trust: Mutual access.
+- Trusts don’t automatically grant access; authorization must be configured.
+- Objective: Learn how domains scale into trees/forests and how trusts enable cross-domain access.
+
+---
+
+## Tools Used
+
+- Active Directory Domain Services (AD DS)
+- Active Directory Users and Computers (ADUC)
+- Group Policy Management Tool
+- PowerShell (for delegation and password resets)
+- Domain Controllers (authentication, SYSVOL distribution)
+
+## Findings
+
+- AD centralizes identity and policy management across large networks.
+- OUs organize users/computers for policy application.
+- Security groups manage permissions across resources.
+- Delegation allows limited admin rights without full privileges.
+- GPOs enforce security baselines (passwords, lock screens, restrictions).
+- Kerberos is the secure default authentication; NetNTLM remains for legacy.
+- Trees and forests scale AD across organizations; trusts enable cross-domain access.
+
+## Mitigation
+
+- Regularly review and update OUs and groups to match organizational structure.
+- Apply GPOs to enforce strong password policies and session security.
+- Use delegation to reduce reliance on Domain Admin accounts.
+- Prefer Kerberos authentication; disable NetNTLM where possible.
+- Implement forests and trusts carefully, granting only necessary cross-domain access.
+- Harden Domain Controllers and monitor SYSVOL for integrity.
+
+## Conclusion
+
+- Covered AD components: domains, OUs, users, groups, computers, GPOs, authentication, trees, forests, trusts.
+- This is an introduction; production-ready AD requires deeper knowledge.
