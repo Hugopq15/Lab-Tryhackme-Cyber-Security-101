@@ -116,6 +116,7 @@ Views:
 ---
 
 ## Tools Used
+
 - Access & Deployment: Remote Desktop, VM login credentials.
 - GUI Navigation: Start Menu, Taskbar, Notification Area, Personalization settings.
 - File System Management: NTFS permissions, Properties → Security tab, ADS (via PowerShell/third-party tools).
@@ -128,13 +129,15 @@ Views:
 ---
 
 ## Findings
+
 - Windows provides both modern (Settings) and legacy (Control Panel) interfaces for system management.
 - Task Manager is essential for monitoring performance and troubleshooting.
 - NTFS enhances security and reliability compared to older file systems.
 - UAC reduces malware risks by requiring elevation prompts.
 - System32 and user account management are critical for OS stability and security.
 
-## Mitigation / Practical Application
+## Mitigation / Best Practices
+
 - Use Settings for common tasks, but rely on Control Panel for advanced configurations.
 - Regularly check Task Manager to identify resource-heavy or suspicious processes.
 - Apply NTFS permissions carefully to enforce least privilege.
