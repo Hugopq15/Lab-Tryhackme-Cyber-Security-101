@@ -41,21 +41,25 @@
 ---
 
 ## Task 8 – Conclusion
+
 - Recapped the efficiency of the terminal over a Graphical User Interface (GUI) and prepared for advanced system administration concepts.
 
 ---
 
 ## Tools Used
+
 - TryHackMe AttackBox: An interactive, browser-based Linux machine.
 - Linux Shell (Terminal): Command-line interface used to interact with the system.
 
 ## Findings
+
 - Versatility: Linux is the backbone of most enterprise servers and smart devices.
 - Search Efficiency: Tools like grep and find allow for auditing massive systems in seconds—a task impossible to perform manually.
 - Data Manipulation: The > and >> operators enable the dynamic creation of audit logs and configuration files.
 - Critical Structure: The pwd command reveals that the Linux directory structure is predictable but requires precision regarding file paths.
 
 ## Mitigation / Best Practices
+
 - Session Control: Always terminate machines after practice to optimize resource usage.
 - Data Loss Prevention: Prefer using >> over > to avoid accidental deletion of important configuration files.
 - Operator Safety: When using &&, ensure the first command is safe to prevent chain errors from affecting system integrity.
