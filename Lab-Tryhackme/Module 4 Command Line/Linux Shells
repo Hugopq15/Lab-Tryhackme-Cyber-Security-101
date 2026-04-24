@@ -1,1 +1,172 @@
 # Room 13 Linux Shells
+
+## Task 1 – Introduction to Linux Shells
+
+Most users rely on the Graphical User Interface (GUI), but nearly all tasks can be performed via the Command-Line Interface (CLI).
+Shells provide enhanced features for commands, making CLI interaction more efficient and resource-friendly.
+Analogy: GUI is like ordering food from a menu, while CLI is like cooking yourself in the OS “kitchen,” with the shell guiding you like a recipe.
+Shell usage gives more power and control over the system.
+Learning objectives:
+- Interact with Linux shells.
+- Use basic shell commands.
+- Explore different types of shells.
+- Write shell scripts.
+- Prerequisite: completion of the Linux Fundamentals module.
+
+---
+
+## Task 2 – How To Interact With a Shell?
+
+Environment Setup
+Start the VM in split-screen view or connect via AttackBox/SSH with provided credentials.
+Default shell in most Linux distributions: Bash (Bourne Again Shell).
+Basic Commands
+- pwd: Print Working Directory → shows current location (default: /home/ubuntu).
+- cd: Change Directory → navigate through the filesystem.
+- ls: List directory contents.
+- cat file: Display file contents.
+- grep pattern file: Search for words/patterns inside files.
+- Example: grep "THM" bigfile.txt → extracts lines containing “THM.”
+
+---
+
+## Task 3 – Types of Linux Shells
+
+Identifying Shells
+echo $SHELL: shows current shell.
+- cat /etc/shells: lists all installed shells.
+Switch shells by typing their name (e.g., zsh).
+Permanently change default shell: chsh -s /usr/bin/zsh.
+Common Shells
+Bourne Again Shell (Bash)
+- Default in most Linux distros.
+Features: scripting, tab completion, command history.
+- Friendly Interactive Shell (Fish)
+Focuses on user-friendliness.
+- Features: simple syntax, auto spell correction, customizable prompts/themes, syntax highlighting.
+Z Shell (Zsh)
+- Modern shell combining features of previous shells.
+- Features: advanced tab completion, auto spell correction, extensive customization (e.g., oh-my-zsh).
+Comparison Table
+Feature	            |     Bash          |	      Fish          |	           Zsh                  |
+Scripting           |	Widely compatible |	Limited	            | combines Bash + extras          |
+Tab completion      |	Basic             |	Advanced suggestions|	Highly extensible via plugins   |
+Customization       |	Basic             |	Good customization  |	Advanced frameworks             |
+User friendliness   |	Less user-friendly|	Most user-friendly  |	User-friendly with customization|
+Syntax highlighting |	Not available	    | Built-in            |	Available via plugins           |     
+
+---
+
+## Task 4 – Shell Scripting and Components
+
+Basics
+Scripts automate repetitive tasks.
+- Written in .sh files, starting with shebang (#!/bin/bash).
+Variables
+- Store values for reuse.
+- Example:
+- bash
+#!/bin/bash
+echo "Hey, what’s your name?"
+read name
+echo "Welcome, $name!"
+Loops
+- Repeat tasks automatically.
+- Example:
+- bash
+#!/bin/bash
+for i in {1..10}
+do
+  echo $i
+done
+Conditional Statements
+Execute code only if conditions are met.
+- Example:
+- bash
+#!/bin/bash
+read name
+if [ "$name" == "Stewart" ]
+then
+  echo "Here is the secret!"
+fi
+Comments
+Written with # to explain code.
+Improve readability and maintainability.
+
+---
+
+## Task 5 – The Locker Script
+
+Requirement
+- Authenticate user with Username: John, Company: Tryhackme, PIN: 7385.
+Script Example
+bash
+#!/bin/bash 
+username=""
+companyname=""
+pin=""
+for i in {1..3}; do
+    if [ "$i" -eq 1 ]; then
+        echo "Enter your Username:"
+        read username
+    elif [ "$i" -eq 2 ]; then
+        echo "Enter your Company name:"
+        read companyname
+    else
+        echo "Enter your PIN:"
+        read pin
+    fi
+done
+
+if [ "$username" = "John" ] && [ "$companyname" = "Tryhackme" ] && [ "$pin" = "7385" ]; then
+    echo "Authentication Successful. You can now access your locker, John."
+else
+    echo "Authentication Denied!!"
+fi
+
+---
+
+## Task 6 – Practical Exercise
+Exercise Setup
+- Script located in /home/user searches for keywords in .log files.
+Requirements:
+- Flag: thm-flag01-script
+- Directory: /var/log
+- Edit script to fill empty double quotes "" with correct values.
+Root Access
+- Switch to root for full access:
+- bash
+- sudo su
+- [sudo] password for user:
+
+---
+
+## Tools Used
+
+- Linux Shells (Bash, Fish, Zsh): for scripting and command execution.
+- Text editors (nano, vim): for writing and editing scripts.
+- Ubuntu VM / AttackBox: lab environment for practice.
+
+## Findings
+
+- Automation: Shell scripts streamline repetitive tasks.
+- Security: Scripts can enforce authentication and access control.
+- Flexibility: Variables, loops, and conditionals enable dynamic operations.
+- Practicality: Exercises demonstrate real-world applications like log analysis and flag discovery.
+
+## Mitigation / Best Practices
+
+- Permissions: Always set execution rights with chmod +x.
+- Validation: Use conditionals to verify user inputs securely.
+- Comments: Document scripts for clarity and maintainability.
+- Root usage: Switch to root only when necessary for system-wide tasks.
+- Testing: Run scripts in controlled environments before applying to production.
+
+## Conclusion
+
+- Explored the importance of shells and their role in Linux systems.
+- Learned about different types of shells (Bash, Fish, Zsh).
+- Gained practical knowledge of shell scripting: variables, loops, conditionals, and comments.
+- Created functional scripts, including the Locker Script.
+- Completed a practical lab exercise to search for flags in log files.
+- Key takeaway: Shells and scripting are powerful tools for automation, efficiency, and system management in Linux.
